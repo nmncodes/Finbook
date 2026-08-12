@@ -11,7 +11,7 @@ export default function (
       notes,
       subTotal,
       type,
-      vat,
+      gst,
       total,
       items,
       status,

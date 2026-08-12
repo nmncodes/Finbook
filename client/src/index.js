@@ -14,7 +14,7 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
   palette: {
-    type: 'dark',
+    type: 'light',
     primary: {
       main: '#8b5cf6',
     },
@@ -22,12 +22,12 @@ const theme = createMuiTheme({
       main: '#6366f1',
     },
     background: {
-      default: '#0f172a',
-      paper: 'rgba(30, 41, 59, 0.7)',
+      default: '#f8fafc',
+      paper: 'rgba(255, 255, 255, 0.7)',
     },
     text: {
-      primary: '#f8fafc',
-      secondary: '#94a3b8',
+      primary: '#0f172a',
+      secondary: '#475569',
     }
   },
   typography: {
@@ -40,7 +40,7 @@ const theme = createMuiTheme({
     MuiPaper: {
       root: {
         backdropFilter: 'blur(16px)',
-        border: '1px solid rgba(255,255,255,0.05)',
+        border: '1px solid rgba(0,0,0,0.05)',
       },
       elevation1: {
         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
@@ -54,7 +54,7 @@ const theme = createMuiTheme({
     },
     MuiInputBase: {
       input: {
-        color: '#f8fafc',
+        color: '#0f172a',
       }
     }
   }

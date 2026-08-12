@@ -6,13 +6,19 @@
   margin: 0;
 }
 
+input, textarea {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-radius: 8px;
+}
+
 body {
-  background: #0f172a;
+  background: #f8fafc;
   background-image: 
-    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
-    radial-gradient(at 50% 0%, hsla(225,39%,30%,0.5) 0, transparent 50%), 
-    radial-gradient(at 100% 0%, hsla(339,49%,30%,0.3) 0, transparent 50%);
-  color: #f1f5f9;
+    radial-gradient(at 0% 0%, hsla(253,100%,95%,1) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, hsla(225,100%,90%,0.5) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(339,100%,95%,0.3) 0, transparent 50%);
+  color: #0f172a;
   min-height: 100vh;
   font-family: 'Outfit', 'Inter', 'Roboto', sans-serif;
 }
@@ -20,27 +26,27 @@ body {
 .tb-container {
   border-radius: 20px;
   overflow: hidden;
-  background: rgba(30, 41, 59, 0.65);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
-  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  color: #0f172a;
 }
 
 .mu-form {
-  background: rgba(15, 23, 42, 0.7);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(20px);
   border-radius: 24px;
   padding: 32px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #e2e8f0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #1e293b;
 }
 
 .MuiButton-containedPrimary {
   background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
   border-radius: 12px !important;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4) !important;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
   color: #ffffff !important;
   font-weight: 600 !important;
@@ -49,27 +55,27 @@ body {
 
 .MuiButton-containedPrimary:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5) !important;
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4) !important;
 }
 
 .tb-container .Mui-focused {
-  background-color: rgba(30, 41, 59, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 0 2px #6366f1;
   border-radius: 8px;
 }
 
 .MuiTableCell-head {
   padding: 16px 12px !important;
-  background: rgba(255, 255, 255, 0.03) !important;
-  color: #94a3b8 !important;
+  background: rgba(0, 0, 0, 0.03) !important;
+  color: #475569 !important;
   font-weight: 600 !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
 .MuiTableCell-body {
   padding: 12px !important;
-  color: #cbd5e1 !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: #334155 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
 .MuiPaper-elevation1 {
@@ -77,10 +83,15 @@ body {
   box-shadow: none !important;
 }
 
+.MuiPaper-root {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  color: #0f172a !important;
+  backdrop-filter: blur(16px);
+}
+
 .MuiTypography-root {
   color: inherit !important;
 }
-
 
 /* ##########################PROGRESS BUTTON */
 .pb-container {
@@ -146,7 +157,7 @@ body {
   width: 54px;
   border-radius: 50%;
   cursor: wait;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   box-shadow: none;
   padding: 0;
 }
@@ -196,10 +207,10 @@ p {
 :root {
   font-size: 16px;
   font-family: 'Outfit';
-  --text-primary: #94a3b8;
-  --text-secondary: #f8fafc;
-  --bg-primary: rgba(15, 23, 42, 0.7);
-  --bg-secondary: rgba(30, 41, 59, 0.8);
+  --text-primary: #64748b;
+  --text-secondary: #0f172a;
+  --bg-primary: rgba(255, 255, 255, 0.8);
+  --bg-secondary: rgba(248, 250, 252, 0.9);
   --transition-speed: 400ms;
 }
 
@@ -213,11 +224,11 @@ main {
   position: fixed;
   background-color: var(--bg-primary);
   backdrop-filter: blur(20px);
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   transition: width var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   z-index: 100;
-  box-shadow: 4px 0 24px rgba(0,0,0,0.2);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.05);
 }
 
 .navbar::-webkit-scrollbar {
@@ -311,7 +322,7 @@ main {
 }
 
 .logo img {
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
 }
 
 .logo-text {
@@ -325,7 +336,7 @@ main {
     width: 100vw;
     height: 5rem;
     border-right: none;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(0,0,0,0.05);
   }
 
   .logo {
@@ -415,9 +426,9 @@ main {
   overflow: hidden;
   width: 100%;
   margin: 20px auto;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  background: rgba(30, 41, 59, 0.4);
-  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0,0,0,0.05);
   backdrop-filter: blur(10px);
 }
 
@@ -429,9 +440,9 @@ main {
 
 .tab {
   width: 100%;
-  color: #f8fafc;
+  color: #0f172a;
   overflow: hidden;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .tab:last-child {
@@ -442,14 +453,14 @@ main {
   display: flex;
   justify-content: space-between;
   padding: 1.2rem 1.5rem;
-  background: rgba(30, 41, 59, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .tab-label:hover {
-  background: rgba(51, 65, 85, 0.8);
+  background: rgba(241, 245, 249, 0.9);
 }
 
 .tab-label::after {
@@ -464,8 +475,8 @@ main {
 .tab-content {
   max-height: 0;
   padding: 0 1.5rem;
-  color: #cbd5e1;
-  background: rgba(15, 23, 42, 0.3);
+  color: #334155;
+  background: rgba(255, 255, 255, 0.4);
   transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
 }
@@ -475,18 +486,18 @@ main {
   justify-content: flex-end;
   padding: 1em;
   font-size: 0.8em;
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   cursor: pointer;
-  color: #94a3b8;
+  color: #64748b;
   transition: color 0.3s ease;
 }
 
 .tab-close:hover {
-  color: #f8fafc;
+  color: #0f172a;
 }
 
 input:checked + .tab-label {
-  background: rgba(30, 41, 59, 0.9);
+  background: rgba(255, 255, 255, 1);
   color: #6366f1;
 }
 
@@ -506,12 +517,20 @@ input:checked ~ .tab-content {
 }
 
 /* Base MUI Overrides to ensure text visibility */
+.MuiInputBase-root {
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+}
+
 .MuiInputBase-input {
-  color: #f8fafc !important;
+  color: #000000 !important;
+  padding: 12px 14px !important;
 }
 
 .MuiFormLabel-root {
-  color: #94a3b8 !important;
+  color: #475569 !important;
+  padding: 0 4px;
+  background-color: transparent !important;
 }
 
 .MuiFormLabel-root.Mui-focused {
@@ -519,11 +538,11 @@ input:checked ~ .tab-content {
 }
 
 .MuiOutlinedInput-notchedOutline {
-  border-color: rgba(255,255,255,0.2) !important;
+  border-color: rgba(0,0,0,0.15) !important;
 }
 
 .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-  border-color: rgba(255,255,255,0.4) !important;
+  border-color: rgba(0,0,0,0.3) !important;
 }
 
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
@@ -531,11 +550,11 @@ input:checked ~ .tab-content {
 }
 
 .MuiInput-underline:before {
-  border-bottom-color: rgba(255,255,255,0.2) !important;
+  border-bottom-color: rgba(0,0,0,0.15) !important;
 }
 
 .MuiInput-underline:hover:not(.Mui-disabled):before {
-  border-bottom-color: rgba(255,255,255,0.4) !important;
+  border-bottom-color: rgba(0,0,0,0.3) !important;
 }
 
 .MuiInput-underline:after {
@@ -543,5 +562,5 @@ input:checked ~ .tab-content {
 }
 
 .MuiIconButton-root {
-  color: #cbd5e1 !important;
+  color: #475569 !important;
 }

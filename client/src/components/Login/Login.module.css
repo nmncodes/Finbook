@@ -3,12 +3,12 @@
 }
 
 .formContainer {
-  background-color: white;
+  background-color: transparent;
   width: 30%;
   margin: 50px auto;
   border-radius: 8px;
   /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
-  border: solid 1px rgb(207, 207, 207);
+  border: none;
 
 }
 
@@ -52,64 +52,66 @@
 .option {
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   line-height: 0.1em;
   margin: 10px 0 20px;
-  color: #0070f3;
+  color: #94a3b8;
 }
 
 .option span {
-  background: #fff;
+  background: rgba(30, 41, 59, 1);
   padding: 0 10px;
 }
 
 .submitBtn {
-  border: 1px solid rgb(51, 51, 216);
+  border: 1px solid #6366f1;
   padding: 15px 30px;
   border-radius: 50px;
-  background-color: white;
+  background-color: rgba(30, 41, 59, 0.8);
+  color: #f8fafc;
   cursor: pointer;
   font-size: 15px;
   outline: none;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .submitBtn:hover {
-  background-color: rgb(209, 233, 255);
+  background-color: #6366f1;
 }
 
 .googleBtn {
-  border: 1px solid rgb(216, 51, 51);
+  border: 1px solid #ef4444;
   padding: 15px 30px;
   border-radius: 50px;
-  background-color: white;
-  color: rgb(24, 24, 24);
+  background-color: transparent;
+  color: #f8fafc;
   cursor: pointer;
   font-size: 15px;
   outline: none;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .googleBtn:hover {
-  background-color: rgb(216, 51, 51);
+  background-color: #ef4444;
   color: white;
 }
 
 .loginBtn {
   width: 100%;
-  border: 1px solid #0070f3;
+  border: 1px solid #6366f1;
   padding: 15px 30px;
-  /* border-radius: 50px; */
-  background-color: white;
-  color: rgb(24, 24, 24);
+  border-radius: 12px;
+  background-color: transparent;
+  color: #f8fafc;
   cursor: pointer;
   font-size: 15px;
   outline: none;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
 }
 
 .loginBtn:hover {
-  background-color: #0070f3;
+  background-color: #6366f1;
   color: white;
 }
 

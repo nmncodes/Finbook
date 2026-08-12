@@ -11,7 +11,7 @@ export default function (
       notes,
       subTotal,
       type,
-      vat,
+      gst,
       total,
       items,
       status,
@@ -186,8 +186,8 @@ img {
         </tr>
 
         <tr>
-            <td style="font-size: 10px">VAT</td>
-            <td style="text-align: right; font-size: 9px; font-weight: 700">${vat}</td>
+            <td style="font-size: 10px">GST</td>
+            <td style="text-align: right; font-size: 9px; font-weight: 700">${gst}</td>
           </tr>
 
         <tr>

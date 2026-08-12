@@ -36,7 +36,7 @@ const InvoiceDetails = () => {
     const location = useLocation()
     const [invoiceData, setInvoiceData] = useState(initialState)
     const [ rates, setRates] = useState(0)
-    const [vat, setVat] = useState(0)
+    const [gst, setGst] = useState(0)
     const [currency, setCurrency] = useState('')
     const [subTotal, setSubTotal] = useState(0)
     const [total, setTotal] = useState(0)
@@ -96,7 +96,7 @@ const InvoiceDetails = () => {
             setType(invoice.type)
             setStatus(invoice.status)
             setSelectedDate(invoice.dueDate)
-            setVat(invoice.vat)
+            setGst(invoice.gst)
             setCurrency(invoice.currency)
             setSubTotal(invoice.subTotal)
             setTotal(invoice.total)
@@ -130,7 +130,7 @@ const InvoiceDetails = () => {
       subTotal: toCommas(invoice.subTotal),
       total: toCommas(invoice.total),
       type: invoice.type,
-      vat: invoice.vat,
+      gst: invoice.gst,
       items: invoice.items,
       status: invoice.status,
       totalAmountReceived: toCommas(totalAmountReceived),
@@ -162,7 +162,7 @@ const InvoiceDetails = () => {
       subTotal: toCommas(invoice.subTotal),
       total: toCommas(invoice.total),
       type: invoice.type,
-      vat: invoice.vat,
+      gst: invoice.gst,
       items: invoice.items,
       status: invoice.status,
       totalAmountReceived: toCommas(totalAmountReceived),
@@ -342,8 +342,8 @@ if(!invoice) {
                         <h4>{subTotal}</h4>
                     </div>
                     <div className={styles.summaryItem}>
-                        <p>{`VAT(${rates}%):`}</p>
-                        <h4>{vat}</h4>
+                        <p>{`GST(${rates}%):`}</p>
+                        <h4>{gst}</h4>
                     </div>
                     <div className={styles.summaryItem}>
                         <p>Total</p>

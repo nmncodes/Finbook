@@ -65,7 +65,7 @@ const Invoice = () => {
     const location = useLocation()
     const [invoiceData, setInvoiceData] = useState(initialState)
     const [ rates, setRates] = useState(0)
-    const [vat, setVat] = useState(0)
+    const [gst, setGst] = useState(0)
     const [currency, setCurrency] = useState(currencies[0].value)
     const [subTotal, setSubTotal] = useState(0)
     const [total, setTotal] = useState(0)
@@ -187,8 +187,8 @@ const Invoice = () => {
             
             //Tax rate is calculated as (input / 100 ) * subtotal + subtotal 
             const overallSum = rates /100 * subTotal + subTotal
-            //VAT is calculated as tax rates /100 * subtotal
-            setVat(rates /100 * subTotal)
+            //GST is calculated as tax rates /100 * subtotal
+            setGst(rates /100 * subTotal)
             setTotal(overallSum)
 
 
@@ -219,7 +219,7 @@ const Invoice = () => {
              ...invoiceData, 
              subTotal: subTotal, 
              total: total, 
-             vat: vat, 
+             gst: gst, 
              rates: rates, 
              currency: currency, 
              dueDate: selectedDate, 
@@ -234,7 +234,7 @@ const Invoice = () => {
             ...invoiceData, 
             subTotal: subTotal, 
             total: total, 
-            vat: vat, 
+            gst: gst, 
             rates: rates, 
             currency: currency, 
             dueDate: selectedDate, 
@@ -411,8 +411,8 @@ const Invoice = () => {
                 <h4>{subTotal}</h4>
             </div>
             <div className={styles.summaryItem}>
-                <p>VAT(%):</p>
-                <h4>{vat}</h4>
+                <p>GST(%):</p>
+                <h4>{gst}</h4>
             </div>
             <div className={styles.summaryItem}>
                 <p>Total</p>
