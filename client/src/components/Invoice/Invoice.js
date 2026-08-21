@@ -30,8 +30,8 @@ import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import {initialState} from '../../initialState'
 import currencies from '../../currencies.json'
-import { createInvoice, getInvoice, updateInvoice } from '../../actions/invoiceActions';
-import { getClientsByUser } from '../../actions/clientActions'
+import { createInvoice, getInvoice, updateInvoice } from '../../slices/invoiceSlice';
+import { getClientsByUser } from '../../slices/clientSlice'
 import AddClient from './AddClient';
 import InvoiceType from './InvoiceType';
 import axios from 'axios'
@@ -215,7 +215,7 @@ const Invoice = () => {
     const handleSubmit =  async (e ) => {
         e.preventDefault()
         if(invoice) {
-         dispatch(updateInvoice( invoice._id, {
+         dispatch(updateInvoice({ id: invoice._id, invoice: {
              ...invoiceData, 
              subTotal: subTotal, 
              total: total, 
@@ -226,11 +226,11 @@ const Invoice = () => {
              client, 
              type: type, 
              status: status 
-            })) 
+            }})) 
          history.push(`/invoice/${invoice._id}`)
         } else {
 
-        dispatch(createInvoice({
+        dispatch(createInvoice({ invoice: {
             ...invoiceData, 
             subTotal: subTotal, 
             total: total, 
@@ -249,7 +249,7 @@ const Invoice = () => {
             paymentRecords: [], 
             creator: [user?.result?._id || user?.result?.googleId] }, 
             history
-            ))
+            }))
         }
 
         // setInvoiceData(initialState)

@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import decode from 'jwt-decode'
 import styles from './Header.module.css'
+import { logout as logoutAction } from '../../slices/authSlice'
 
 import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
@@ -41,7 +42,7 @@ const Header = () => {
     
 
     const logout =() => {
-        dispatch({ type: 'LOGOUT' })
+        dispatch(logoutAction())
         history.push('/')
         setUser(null)
     }  

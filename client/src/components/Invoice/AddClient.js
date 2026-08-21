@@ -11,7 +11,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 
 import { useDispatch } from 'react-redux'
-import { createClient } from '../../actions/clientActions'
+import { createClient } from '../../slices/clientSlice'
 import { useLocation } from 'react-router-dom';
 
 import { useSnackbar } from '../Snackbar/Snackbar'
@@ -80,7 +80,7 @@ const AddClient = ({ setOpen, open }) => {
 
     const handleSubmitClient =(e)=> {
         e.preventDefault()
-          dispatch(createClient(clientData, openSnackbar))
+          dispatch(createClient({ client: clientData, openSnackbar }))
         
         clear()
         handleClose()

@@ -6,10 +6,10 @@ import {GoogleLogin, GoogleOAuthProvider} from '@react-oauth/google'
 import jwtDecode from 'jwt-decode'
 import {useDispatch} from 'react-redux'
 import { useHistory, Link } from 'react-router-dom'
-import { signup, signin } from '../../actions/auth'
+import { signup, signin, googleLogin } from '../../slices/authSlice'
 import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
-import { createProfile } from '../../actions/profile'
+import { createProfile } from '../../slices/profileSlice'
 import { useSnackbar } from '../Snackbar/Snackbar'
 import CircularProgress from '@material-ui/core/CircularProgress';
 
@@ -38,9 +38,9 @@ const Login = () => {
     const handleSubmit =(e) => {
         e.preventDefault()
         if(isSignup) {
-            dispatch(signup(formData, openSnackbar, setLoading))
+            dispatch(signup({ formData, openSnackbar, setLoading }))
         } else {
-            dispatch(signin(formData, openSnackbar, setLoading))
+            dispatch(signin({ formData, openSnackbar, setLoading }))
         }
         setLoading(true)
     }
@@ -56,7 +56,7 @@ const Login = () => {
         dispatch(createProfile({name: result?.name, email: result?.email, userId: result?.jti, phoneNumber: '', businessName: '', contactAddress: '', logo: result?.picture, website: ''}))
 
         try {
-            dispatch({ type: "AUTH", data: {result, token}})
+            dispatch(googleLogin({result, token}))
 
             window.location.href='/dashboard'
             

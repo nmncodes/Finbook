@@ -24,7 +24,7 @@ import BorderColorIcon from '@material-ui/icons/BorderColor';
 import { Button } from '@material-ui/core';
 import { useSnackbar } from '../Snackbar/Snackbar'
 
-import { deleteClient } from '../../actions/clientActions';
+import { deleteClient } from '../../slices/clientSlice';
 // import clients from '../../clients.json'
 
 const useStyles1 = makeStyles((theme) => ({
@@ -176,7 +176,7 @@ const headerStyle = { borderBottom: 'none', textAlign: 'center'}
                   </IconButton>
               </TableCell>
               <TableCell style={{...tableStyle, width: '10px'}}>
-                  <IconButton onClick={() => dispatch(deleteClient(row._id, openSnackbar))}>
+                  <IconButton onClick={() => dispatch(deleteClient({ id: row._id, openSnackbar }))}>
                     <DeleteOutlineRoundedIcon style={{width: '20px', height: '20px'}} />
                   </IconButton>
               </TableCell>

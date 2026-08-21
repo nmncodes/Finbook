@@ -2,7 +2,7 @@
 import React, { useState, useEffect} from 'react'
 import Clients from './Clients'
 import AddClient from './AddClient'
-import { getClientsByUser } from '../../actions/clientActions'
+import { getClientsByUser } from '../../slices/clientSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useHistory } from 'react-router-dom'
 import NoData from '../svgIcons/NoData'

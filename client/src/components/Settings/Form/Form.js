@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { Avatar, Button, Paper, Grid, Container } from '@material-ui/core';
 import Uploader from './Uploader';
-import { getProfilesByUser, updateProfile } from '../../../actions/profile';
+import { getProfilesByUser, updateProfile } from '../../../slices/profileSlice';
 import useStyles from './styles';
 import Input from './Input';
 import ProfileDetail from './Profile';
@@ -54,7 +54,7 @@ const Settings = () => {
   
   const handleSubmit = async(e) => {
     e.preventDefault();
-      await dispatch(updateProfile(profiles?._id, form, openSnackbar));
+      await dispatch(updateProfile({ id: profiles?._id, form, openSnackbar }));
       setSwitchEdit(0)
 
   };

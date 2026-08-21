@@ -5,7 +5,7 @@ import useStyles from './styles';
 import Field from '../Login/Field';
 import { useParams, useHistory } from 'react-router-dom'
 
-import { reset } from '../../actions/auth';
+import { reset } from '../../slices/authSlice';
 
 const Reset = () => {
   const classes = useStyles();
@@ -17,7 +17,7 @@ const Reset = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-      dispatch(reset({ password: form, token: token}, history))
+      dispatch(reset({ formData: { password: form, token: token}, history }))
   }
 
   const handleChange = (e) => setForm(e.target.value);

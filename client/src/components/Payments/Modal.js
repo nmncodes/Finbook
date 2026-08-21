@@ -14,7 +14,7 @@ import DatePicker from './DatePicker'
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
 import { useDispatch } from 'react-redux'
-import { updateInvoice } from '../../actions/invoiceActions';
+import { updateInvoice } from '../../slices/invoiceSlice';
 
 const styles = (theme) => ({
   root: {
@@ -124,7 +124,7 @@ const Modal = ({ setOpen, open, invoice }) => {
 
     const handleSubmitPayment =(e)=> {
         e.preventDefault()
-          dispatch(updateInvoice(invoice._id, updatedInvoice))
+          dispatch(updateInvoice({ id: invoice._id, invoice: updatedInvoice }))
           .then(() => {
             handleClose()
             window.location.reload()

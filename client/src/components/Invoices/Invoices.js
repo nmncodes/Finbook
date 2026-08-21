@@ -23,7 +23,7 @@ import DeleteOutlineRoundedIcon from '@material-ui/icons/DeleteOutlineRounded';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import { useLocation } from 'react-router-dom';
 
-import { deleteInvoice, getInvoicesByUser } from '../../actions/invoiceActions';
+import { deleteInvoice, getInvoicesByUser } from '../../slices/invoiceSlice';
 import NoData from '../svgIcons/NoData';
 import Spinner from '../Spinner/Spinner'
 import { useSnackbar } from '../Snackbar/Snackbar'
@@ -229,7 +229,7 @@ const Invoices = () => {
                   </IconButton>
               </TableCell>
               <TableCell style={{...tableStyle, width: '10px'}}>
-                  <IconButton onClick={() => dispatch(deleteInvoice(row._id, openSnackbar))}>
+                  <IconButton onClick={() => dispatch(deleteInvoice({ id: row._id, openSnackbar }))}>
                     <DeleteOutlineRoundedIcon  style={{width: '20px', height: '20px'}} />
                   </IconButton>
               </TableCell>

@@ -12,7 +12,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 
 import { useDispatch, useSelector } from 'react-redux'
-import { createClient, updateClient } from '../../actions/clientActions'
+import { createClient, updateClient } from '../../slices/clientSlice'
 import { useSnackbar } from '../Snackbar/Snackbar'
 
 const styles = (theme) => ({
@@ -93,9 +93,9 @@ const AddClient = ({ setOpen, open, currentId, setCurrentId }) => {
   const handleSubmitClient = (e) => {
     e.preventDefault()
     if (currentId) {
-      dispatch(updateClient(currentId, clientData, openSnackbar))
+      dispatch(updateClient({ id: currentId, client: clientData, openSnackbar }))
     } else {
-      dispatch(createClient(clientData, openSnackbar))
+      dispatch(createClient({ client: clientData, openSnackbar }))
     }
 
     clear()
