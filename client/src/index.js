@@ -1,18 +1,19 @@
 //Copyright (c) 2022
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-import { configureStore } from '@reduxjs/toolkit'
-import { Provider } from 'react-redux'
-import authReducer from './slices/authSlice'
-import invoiceReducer from './slices/invoiceSlice'
-import clientReducer from './slices/clientSlice'
-import profileReducer from './slices/profileSlice'
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import authReducer from './slices/authSlice';
+import invoiceReducer from './slices/invoiceSlice';
+import clientReducer from './slices/clientSlice';
+import profileReducer from './slices/profileSlice';
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+if (typeof process === 'undefined') { window.process = { env: {} }; }
 
 const theme = createMuiTheme({
   palette: {
